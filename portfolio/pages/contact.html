@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Moise Bienvenue</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">MB<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="projets.html">Projets</a></li>
+                <li><a href="parcours.html">Parcours</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="contact-header">
+            <h1>Me <span>Contacter</span></h1>
+            <p>Un projet en tête ou une question ? N'hésitez pas à m'écrire.</p>
+        </section>
+
+        <div class="forms-wrapper">
+            <section class="contact-form-section">
+                <h2>Envoyer un message</h2>
+                <form action="#">
+                    <div class="form-group">
+                        <label for="name">Nom complet</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary">Envoyer</button>
+                </form>
+            </section>
+
+            <section class="project-request-section">
+                <h2>Demande de projet</h2>
+                <form action="#">
+                    <div class="form-group">
+                        <label for="client-name">Nom/Entreprise</label>
+                        <input type="text" id="client-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="project-type">Type de projet</label>
+                        <select id="project-type">
+                            <option value="web">Site Web / Application</option>
+                            <option value="mobile">Application Mobile</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description du besoin</label>
+                        <textarea id="description" rows="5" placeholder="Décrivez votre projet..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn secondary">Soumettre la demande</button>
+                </form>
+            </section>
+        </div>
+
+        <section class="contact-info">
+            <div class="info-card">
+                <p>📧 moisematoboutse@gmail.com</p>
+                <p>📞 +221 78 893 79 33</p>
+                <p>🔗 "https://github.com/battlepizza15" </p>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

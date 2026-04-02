@@ -1,0 +1,341 @@
+/* 1. Variables de couleurs (Basé sur ton identité visuelle) */
+:root {
+    --bg-dark: #0a192f;        /* Bleu nuit profond */
+    --bg-accent: #112240;      /* Bleu légèrement plus clair pour les cartes */
+    --text-main: #e6f1ff;      /* Blanc cassé pour le texte */
+    --text-dim: #8892b0;       /* Gris-bleu pour les descriptions */
+    --accent-color: #64ffda;   /* Couleur d'accent (turquoise ou rose selon ton choix) */
+    --gradient: linear-gradient(135deg, #0a192f 0%, #172a45 100%);
+}
+
+/* 2. Reset et Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; 
+}
+
+body {
+    background: var(--bg-dark);
+    background-attachment: fixed;
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+header {
+    padding: 1.5rem 10%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(10, 25, 47, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo span { color: var(--accent-color); }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--accent-color);
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    background: var(--gradient);
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+}
+
+.hero-image img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 4px solid var(--accent-color);
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.2); /* Effet lumineux */
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.hero-text span {
+    color: var(--accent-color);
+}
+
+.hero-text h3 {
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.description {
+    max-width: 600px;
+    margin-bottom: 2rem;
+    color: var(--text-dim);
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn.primary {
+    background: var(--accent-color);
+    color: var(--bg-dark);
+    margin-right: 1rem;
+}
+
+.btn.secondary {
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-text h1 { font-size: 2rem; }
+    
+    .nav-links { display: none; } 
+}
+/* --- Page Projets --- */
+.container {
+    padding: 120px 10% 50px; /* Espace pour le header fixe */
+}
+
+.projets-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Style de la barre de recherche */
+.search-container {
+    margin-top: 1.5rem;
+}
+
+.search-container input {
+    width: 100%;
+    max-width: 500px;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    border: 1px solid var(--accent-color);
+    background: var(--bg-accent);
+    color: var(--text-main);
+    outline: none;
+}
+
+/* Grille de projets (Flexbox/Grid) */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive automatique */
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--bg-accent);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+}
+
+.tags {
+    margin: 1rem 0;
+}
+
+.tags span {
+    background: rgba(100, 255, 218, 0.1);
+    color: var(--accent-color);
+    padding: 0.2rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+}
+
+.btn-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+/* --- Page Parcours --- */
+.timeline-section, .skills-section, .certifs-section {
+    margin-bottom: 4rem;
+}
+
+.timeline {
+    border-left: 2px solid var(--accent-color);
+    padding-left: 2rem;
+    margin-top: 2rem;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.45rem;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background: var(--accent-color);
+    border-radius: 50%;
+}
+
+.timeline-item .date {
+    font-weight: 600;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+}
+
+/* Grille de compétences */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.skill-card {
+    background: var(--bg-accent);
+    padding: 1rem;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    background: rgba(100, 255, 218, 0.1);
+    transform: scale(1.05);
+}
+
+.certifs-list {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.certifs-list li {
+    background: var(--bg-accent);
+    margin-bottom: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.certifs-list li::before {
+    content: '🏆';
+    margin-right: 10px;
+}
+/* --- Page Contact --- */
+.forms-wrapper {
+    display: flex;
+    gap: 4rem;
+    margin-top: 2rem;
+    flex-wrap: wrap; /* Pour le mobile */
+}
+
+.contact-form-section, .project-request-section {
+    flex: 1;
+    min-width: 300px;
+    background: var(--bg-accent);
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+}
+
+.form-group input, .form-group textarea, .form-group select {
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    background: var(--bg-dark);
+    color: var(--text-main);
+    font-size: 1rem;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.contact-info {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.info-card {
+    display: inline-block;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(100, 255, 218, 0.1) 0%, transparent 100%);
+    border-radius: 15px;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+}

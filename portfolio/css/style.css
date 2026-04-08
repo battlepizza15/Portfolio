@@ -339,3 +339,31 @@ header {
     border-radius: 15px;
     border: 1px solid rgba(100, 255, 218, 0.1);
 }
+
+/* Ce code ne s'active que sur les écrans de téléphone */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Pour que la photo ne dépasse plus */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* 2. Pour que le menu (Accueil, Projets...) s'affiche bien */
+    nav ul {
+        display: flex !important;
+        flex-direction: column !important; /* Met le menu en liste verticale */
+        align-items: center !important;
+        padding: 0 !important;
+    }
+
+    nav li {
+        margin: 10px 0 !important; /* Espace les liens pour qu'ils soient cliquables */
+    }
+
+    /* 3. Empêche le site de glisser sur les côtés */
+    body, html {
+        overflow-x: hidden !important;
+        width: 100% !important;
+    }
+}

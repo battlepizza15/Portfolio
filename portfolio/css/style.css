@@ -1,4 +1,3 @@
-/* 1. Variables de couleurs (Basé sur ton identité visuelle) */
 :root {
     --bg-dark: #0a192f;        /* Bleu nuit profond */
     --bg-accent: #112240;      /* Bleu légèrement plus clair pour les cartes */
@@ -9,7 +8,7 @@
 }
 
 /* 2. Reset et Base */
-* {
+*{ 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,11 +16,23 @@
 }
 
 body {
-    background: var(--bg-dark);
-    background-attachment: fixed;
-    color: var(--text-main);
+   
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background:var(--bg-dark)
+    background-attachment fixed;
+    color:var(--text-main);
     line-height: 1.6;
     overflow-x: hidden;
+    background-color: #0a192f;
+    color: #e6f1ff;
+
+}
+
+section {
+    flex: 1;
 }
 
 header {
@@ -41,7 +52,7 @@ header {
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 0.9rem;
     font-weight: 700;
 }
 
@@ -139,7 +150,7 @@ header {
     .hero-container {
         flex-direction: column;
         text-align: center;
-        padding-top: 100px;
+        padding-top: 20px;
     }
 
     .hero-text h1 { font-size: 2rem; }
@@ -224,7 +235,7 @@ header {
 
 .timeline-item {
     position: relative;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .timeline-item::before {
@@ -339,31 +350,49 @@ header {
     border-radius: 15px;
     border: 1px solid rgba(100, 255, 218, 0.1);
 }
+/* --- UNIQUEMENT POUR LE TÉLÉPHONE (Ajout en bas du fichier) --- */
 
-/* Ce code ne s'active que sur les écrans de téléphone */
-@media screen and (max-width: 768px) {
-    
-    /* 1. Pour que la photo ne dépasse plus */
-    img {
-        max-width: 100% !important;
-        height: auto !important;
+@media (max-width: 568px) {
+    /* 1. La Barre de Navigation */
+    header {
+        padding: 0.8rem 5%; /* On gagne de la place */
     }
 
-    /* 2. Pour que le menu (Accueil, Projets...) s'affiche bien */
-    nav ul {
-        display: flex !important;
-        flex-direction: column !important; /* Met le menu en liste verticale */
-        align-items: center !important;
-        padding: 0 !important;
+    .navbar {
+        flex-direction: column; /* Le logo au-dessus, le menu en dessous */
+        gap: 0.5rem;
     }
 
-    nav li {
-        margin: 10px 0 !important; /* Espace les liens pour qu'ils soient cliquables */
+    .nav-links {
+        display: flex; /* On s'assure qu'ils restent visibles */
+        gap: 0.8rem; /* On serre un peu les liens */
+        font-size: 0.75rem; /* Et on les réduit un peu */
     }
 
-    /* 3. Empêche le site de glisser sur les côtés */
-    body, html {
-        overflow-x: hidden !important;
-        width: 100% !important;
+    /* 2. Le Titre de la Page */
+    .container h1 {
+        font-size: 0.7rem; /* Un titre moins énorme sur mobile */
+        margin-bottom: 0.5rem;
+    }
+
+    .description {
+        font-size: 0.8rem; /* Texte de description un poil plus petit */
+        margin-bottom: 1.5rem;
+    }
+
+    /* 3. La Grille de Projets (CRUCIAL) */
+    .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Force UNE SEULE colonne */
+        gap: 1.5rem; /* Un peu d'espace entre les cartes empilées */
+    }
+
+    /* 4. Les Cartes de Projets */
+    .project-card {
+        padding: 1rem; /* On serre un peu le padding intérieur */
+    }
+
+    .tags span {
+        font-size: 0.7rem; /* Et on réduit la taille des tags */
     }
 }

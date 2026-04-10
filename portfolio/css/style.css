@@ -350,3 +350,49 @@ header {
     border-radius: 15px;
     border: 1px solid rgba(100, 255, 218, 0.1);
 }
+/* --- UNIQUEMENT POUR LE TÉLÉPHONE (Ajout en bas du fichier) --- */
+
+@media (max-width: 768px) {
+    /* 1. La Barre de Navigation */
+    header {
+        padding: 0.8rem 5%; /* On gagne de la place */
+    }
+
+    .navbar {
+        flex-direction: column; /* Le logo au-dessus, le menu en dessous */
+        gap: 0.5rem;
+    }
+
+    .nav-links {
+        display: flex; /* On s'assure qu'ils restent visibles */
+        gap: 0.8rem; /* On serre un peu les liens */
+        font-size: 0.75rem; /* Et on les réduit un peu */
+    }
+
+    /* 2. Le Titre de la Page */
+    .container h1 {
+        font-size: 1.8rem; /* Un titre moins énorme sur mobile */
+        margin-bottom: 0.5rem;
+    }
+
+    .description {
+        font-size: 0.9rem; /* Texte de description un poil plus petit */
+        margin-bottom: 1.5rem;
+    }
+
+    /* 3. La Grille de Projets (CRUCIAL) */
+    .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Force UNE SEULE colonne */
+        gap: 1.5rem; /* Un peu d'espace entre les cartes empilées */
+    }
+
+    /* 4. Les Cartes de Projets */
+    .project-card {
+        padding: 1rem; /* On serre un peu le padding intérieur */
+    }
+
+    .tags span {
+        font-size: 0.7rem; /* Et on réduit la taille des tags */
+    }
+}

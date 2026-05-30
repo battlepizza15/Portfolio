@@ -155,7 +155,14 @@ header {
 
     .hero-text h1 { font-size: 2rem; }
     
-    .nav-links { display: none; } 
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+        padding: 0;
+        list-style: none; 
+    } 
 }
 /* --- Page Projets --- */
 .container {
@@ -349,4 +356,8 @@ header {
     background: linear-gradient(135deg, rgba(100, 255, 218, 0.1) 0%, transparent 100%);
     border-radius: 15px;
     border: 1px solid rgba(100, 255, 218, 0.1);
+}
+.actif{
+    color: red;
+    font-weight: bold;
 }

@@ -1,3 +1,9 @@
+<?php
+require_once 'config/connexion.php';
+require_once 'fonctions.php';
+enregistrerVisite($pdo);
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -5,21 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Parcours | Moise Bienvenue</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=1">
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">MB<span>.</span></div>
-            <ul class="nav-links">
-                <li><a href="../index.html">Accueil</a></li>
-                <li><a href="projets.html">Projets</a></li>
-                <li><a href="parcours.html" class="active">Parcours</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php require 'composants/navigation.php'; ?>
 
     <main class="container">
         <section class="timeline-section">
@@ -31,6 +27,7 @@
                         <h3>Licence 2</h3>
                         <p>Formation en téléinformatique.</p>
                     </div>
+                </div> 
 
                 <div class="timeline-item">
                     <div class="date">2023 - 2024</div>
@@ -39,10 +36,11 @@
                         <p>Gestion administrative et organisation des activités d’une auto-école.<hr>Tout en assurant le suivi des dossiers des élèves et la coordination des services.</p>
                     </div>
                 </div>
+                
                 <div class="timeline-item">
                     <div class="date">2022 - 2023</div>
                     <div class="content">
-                        <h3>Agent comercial Moov - Gabon Télécom</h3>
+                        <h3>Agent commercial Moov - Gabon Télécom</h3>
                         <p>Assistant et présentation des offres internet et appels.</p>
                     </div>
                 </div>
@@ -58,7 +56,7 @@
                 <div class="skill-card">Python</div>
                 <div class="skill-card">Bases de données (SQL & NoSQL)</div>
                 <div class="skill-card">Sécurité (cryptographie) </div>
-                <div class="skill-card">Developpement Web Statique</div>
+                <div class="skill-card">Développement Web Statique</div>
                 <div class="skill-card">Langage C</div>
             </div>
         </section>
@@ -73,6 +71,8 @@
             </ul>
         </section>
     </main>
+
+    <?php require 'composants/pied-de-page.php'; ?>
 
 </body>
 </html>
